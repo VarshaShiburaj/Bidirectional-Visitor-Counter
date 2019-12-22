@@ -1,0 +1,15 @@
+AT89C51 (8051 based Microcontroller)
+8051 Programmer
+Push Button
+10µF Electrolytic Capacitor
+2 x 10KΩ Resistors (1/4 Watt)
+11.0592 MHz Crystal
+2 x 33pF Ceramic Capacitors
+16 x 2 LCD Display
+10KΩ Potentiometer
+2 x IR Sensors (Reflective Type)
+Connecting Wires
+Power Supply
+Keil µVision Software
+Willar Software
+Proteus

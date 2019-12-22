@@ -1,0 +1,12 @@
+This circuit is designed for counting visitors who are entering and leaving a room. 
+It can be employed to many applications like automatic light on-off mechanisms, 
+power saving mechanisms, etc. IR sensors are made use of to implement this project.
+Infrared or simply IR Sensors are devices that work with Infrared Light Source and 
+a Photo Detector like a Photo Diode or a Photo Transistor that act as a Transmitter 
+and Receiver respectively. 
+The project uses an IR LED as the IR transmitter and a photo diode as the IR receiver.
+Two sets of IR sensors consisting of an IR LED and photo diode are placed at two ends 
+of the entrance of a room. Output from each sensor is fed to the microcontroller. In 
+normal operation, IR light from the LED would not fall on the Photo Diode as it is a 
+Reflective type IR Sensor. The output from the sensor would be a logic LOW signal in 
+this case.

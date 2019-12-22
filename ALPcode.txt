@@ -1,0 +1,63 @@
+ORG 000H
+SJMP INIT
+ORG 003H
+ACALL ISR
+RETI
+
+INIT: MOV P0,#00000000B
+      MOV P3,#11111111B
+      MOV P1,#00000000B
+      MOV R6,#00000000B
+      MOV DPTR,#LUT
+      SETB IP.0     
+      SETB TCON.0   
+      SETB IE.0     
+      SETB IE.7    
+
+MAIN: MOV A,R6
+
+MOV B,#100D
+      DIV AB
+      ACALL DISPLAY
+      SETB P1.0
+      ACALL DELAY
+      ACALL DELAY
+      MOV A,B
+      MOV B,#10D
+      DIV AB
+      ACALL DISPLAY
+      CLR P1.0
+      SETB P1.1
+      ACALL DELAY
+      ACALL DELAY
+      MOV A,B
+      ACALL DISPLAY
+      CLR P1.1
+      SETB P1.2
+      ACALL DELAY
+      ACALL DELAY
+      CLR P1.2
+      SJMP MAIN
+
+ISR: INC R6     
+     RET
+
+DISPLAY: MOVC A,@A+DPTR 
+         CPL A
+         MOV P0,A
+         RET
+
+DELAY: MOV R3,#255D  
+LABEL: DJNZ R3,LABEL
+       RET
+LUT: DB 3FH
+     DB 06H
+     DB 5BH
+     DB 4FH
+     DB 66H
+     DB 6DH
+     DB 7DH
+     DB 07H
+     DB 7FH
+     DB 6FH
+END
